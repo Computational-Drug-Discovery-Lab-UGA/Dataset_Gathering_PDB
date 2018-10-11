@@ -10,9 +10,9 @@
 using namespace std;
 
 int main() {
-    string filename = "1pru(1).txt";
+    string filename = "../pdbs/1pru(1).txt";
     // check that file was opened
-    ifstream file("1pru(1).txt");
+    ifstream file("../pdbs/1pru(1).txt");
     if (!file.is_open()) {
         std::cerr << "Failed to open file!\n";
         return -1;
