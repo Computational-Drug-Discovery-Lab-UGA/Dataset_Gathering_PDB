@@ -1,6 +1,3 @@
-//
-// Created by sam4p on 10/11/2018.
-//
 
 
 #include <fstream>
@@ -10,9 +7,9 @@
 using namespace std;
 
 int main() {
-    string filename = "../pdbs/1pru(1).txt";
+    string filename = "../pdbs/1arf.txt";
     // check that file was opened
-    ifstream file("../pdbs/1pru(1).txt");
+    ifstream file("../pdbs/1arf.txt");
     if (!file.is_open()) {
         std::cerr << "Failed to open file!\n";
         return -1;

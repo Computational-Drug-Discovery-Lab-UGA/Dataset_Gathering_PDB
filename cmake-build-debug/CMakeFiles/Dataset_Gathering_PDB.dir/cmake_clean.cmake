@@ -1,9 +1,7 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Dataset_Gathering_PDB.dir/main.cpp.obj"
+  "CMakeFiles/Dataset_Gathering_PDB.dir/main.cpp.o"
   "Dataset_Gathering_PDB.pdb"
-  "Dataset_Gathering_PDB.exe"
-  "Dataset_Gathering_PDB.exe.manifest"
-  "libDataset_Gathering_PDB.dll.a"
+  "Dataset_Gathering_PDB"
 )
 
 # Per-language clean rules from dependency scanning.
