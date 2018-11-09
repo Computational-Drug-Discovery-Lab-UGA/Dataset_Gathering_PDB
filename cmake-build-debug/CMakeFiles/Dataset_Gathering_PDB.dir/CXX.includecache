@@ -6,11 +6,23 @@
 
 #IncludeRegexTransform: 
 
-/Users/jacknadaud/Desktop/development/Dataset_Gathering_PDB/main.cpp
+/Users/jacknadaud/Desktop/development/Dataset_Gathering_PDB/parser.cpp
+dirent.h
+-
 fstream
 -
 iostream
 -
+ostream
+-
+sstream
+-
+memory
+-
 string
+-
+stdlib.h
+-
+vector
 -
 
