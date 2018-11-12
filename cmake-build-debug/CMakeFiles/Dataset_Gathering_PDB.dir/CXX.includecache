@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/Users/jacknadaud/Desktop/development/Dataset_Gathering_PDB/parser.cpp
+/Users/jacknadaud/Desktop/development/Dataset_Gathering_PDB/main.cpp
 dirent.h
 -
 fstream
@@ -24,5 +24,9 @@ string
 stdlib.h
 -
 vector
+-
+stdio.h
+-
+sys/stat.h
 -
 

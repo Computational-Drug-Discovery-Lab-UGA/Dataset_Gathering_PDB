@@ -3,5 +3,3 @@
 
 CMakeFiles/Dataset_Gathering_PDB.dir/main.cpp.o: ../main.cpp
 
-CMakeFiles/Dataset_Gathering_PDB.dir/parser.cpp.o: ../parser.cpp
-
