@@ -33,25 +33,37 @@ void parseDirectory(std::string dirPath, std::vector<std::string> &files) {
 
 int main(int argc, char *argv[]) {
 
+    //std::string PDBwithDNA;
+    //mkdir(PDBwithDNA.c_str());
+
     std::vector<std::string> files;
     std::string directory = "/Users/jacknadaud/Desktop/324pdb";
     parseDirectory(directory, files);
-    //while () {
+
         int numFiles = (int) files.size();
         std::string currentFile = "";
         for (int i = 0; i < numFiles; ++i) {
             currentFile = files[i];
-        }
-        std::ifstream file(currentFile);
-        if (!file.is_open()) {
-            std::cerr << "Failed to open file!\n";
-            //return -1;
-        }
-        const std::string keyword1 = "DNA";
-        while (getline(file, currentFile)) {
-            if (currentFile.find(keyword1) != std::string::npos) {
-                std::cout << "files containing 'DNA' include: " << currentFile << "\n";
-                break;
+            std::ifstream file(currentFile);
+            if (!file.is_open()) {
+                std::cerr << "Failed to open file!\n";
+            }
+            const std::string keyword1 = "DNA";
+            std::string pdb;
+            while (getline(file, pdb)) {
+                if (pdb.find(keyword1) != std::string::npos) {
+                    std::cout << "files containing 'DNA' include: " << currentFile << "\n";
+
+                    /*/
+                    std::string currentFile = dirPath + "/" + files[i];
+                    std::string currentFileName = newDirPath + "/" +files[i];
+                    std::ifstream src(fileName.c_str(), std::ios::binary);
+                    std::ofstream dest(currentFileName.c_str(), std::ios::binary);
+                    dest<<src.rdbuf();
+                    //*/
+
+                    break;
+                }
             }
         }
     }
@@ -62,12 +74,4 @@ int main(int argc, char *argv[]) {
 
 
 
-/*/
-        std::string currentFile = dirPath + "/" + files[i];
-        std::string currentFileName = newDirPath + "/" +files[i];
-        std::ifstream src(fileName.c_str(), std::ios::binary);
-        std::ofstream dest(currentFileName.c_str(), std::ios::binary);
-        dest<<src.rdbuf();
 
-
-        //*/
