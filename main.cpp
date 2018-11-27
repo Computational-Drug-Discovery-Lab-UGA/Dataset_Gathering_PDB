@@ -12,12 +12,12 @@
 #include <algorithm>
 #include <iterator>
 
-//directory of sample pdb folder /Users/jacknadaud/Desktop/PDBS/324pdb
-//created a new directory with address /Users/jacknadaud/Desktop/PDBS/DNAPDB for new PDBS
+//directory of sample pdb folder with 324 pdb files  /Users/jacknadaud/Desktop/PDBS/324pdb
+//created a new directory with address  /Users/jacknadaud/Desktop/PDBS/DNAPDB  where pdbs are moved
 
 void replaceAll(std::string& source, const std::string& from, const std::string& to) {
     std::string newString;
-    newString.reserve(source.length());  // avoids a few memory allocations
+    newString.reserve(source.length());
 
     std::string::size_type lastPos = 0;
     std::string::size_type findPos;
@@ -28,19 +28,19 @@ void replaceAll(std::string& source, const std::string& from, const std::string&
         newString += to;
         lastPos = findPos + from.length();
     }
-
-    // Care for the rest after last occurrence
     newString += source.substr(lastPos);
 
     source.swap(newString);
 }
 
+//copyFile is unused now
 bool copyFile(std::string SRC, std::string DEST) {
     std::ifstream src(SRC, std::ios::binary);
     std::ofstream dest(DEST, std::ios::binary);
     dest << src.rdbuf();
     return src && dest;
 }
+
 void parseDirectory(std::string dirPath, std::vector<std::string> &files) {
     DIR *dir;
     if (nullptr == (dir = opendir(dirPath.c_str()))){
@@ -79,34 +79,11 @@ int main(int argc, char *argv[]) {
 
                     //std::cout << "files containing 'DNA' include: " << currentFile << "\n";
 
-                    std::string newDirPath = "/Users/jacknadaud/Desktop/PDBS/DNAPDB";
-                    copyFile(directory, newDirPath);
-
-                    return copyFile(argv[1], argv[2]) ? 0 : 1;
-
-
-
-
-                    /*/  method below uses void replaceAll and changes filename
-                         puts in new folder but new files are just empty pdbs
-
-                     std::string newDirPath = "/Users/jacknadaud/Desktop/PDBS/DNAPDB";
-                    replaceAll(currentFile, std::string("324pdb"), std::string("DNAPDB"));
                     std::ifstream src(currentFile.c_str(), std::ios::binary);
+                    std::string newDirPath = "/Users/jacknadaud/Desktop/PDBS/DNAPDB";
+                    replaceAll(currentFile, std::string("324pdb"), std::string("DNAPDB"));
                     std::ofstream dest(currentFile.c_str(), std::ios::binary);
                     dest<<src.rdbuf();
-
-                    /*/
-
-                    /*/  method below similar to one in code, can't figure out
-
-                    std::string currentFile = directory + "/" + files[i];
-                    std::string newFileName = newDirPath + "/" + files[i];
-                    std::cout << newFileName <<"\n";
-                    std::ifstream src(currentFile.c_str(), std::ios::binary);
-                    std::ofstream dest(newFileName.c_str(), std::ios::binary);
-                    dest<<src.rdbuf();
-                    /*/
                 }
             }
         }
