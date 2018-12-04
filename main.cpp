@@ -24,7 +24,7 @@ int main(int argc, char *argv[]) {
 
     //cant remember if this works on windows. let me know
     std::string newDirectory = directory + "/" + keyword1;
-    std::mkdir(newDirectory.c_str());
+    mkdir(newDirectory.c_str(), S_IRWXU);
 
     parseDirectory(directory, files);
 
@@ -50,20 +50,13 @@ int main(int argc, char *argv[]) {
 
       while(getline(file, line)){
         if(line.find(keyword1) != std::string::npos){
-          //std::cout << "files containing 'DNA' include: " << currentFile << "\n";
           std::ifstream src(currentFile.c_str(), std::ios::binary);
 
-          //std::string newDirPath = "/Users/jacknadaud/Desktop/PDBS/DNAPDB";
-          //you should be creating the directory before this loop, so I put that at the top
-
-          replaceAll(currentFile, std::string("324pdb"), std::string("DNAPDB"));
-          std::ofstream dest(currentFile.c_str(), std::ios::binary);
+          std::string newFile = newDirectory + "/" + currentFile.substr(currentFile.find_last_of("/") + 1);
+          std::ofstream dest(newFile.c_str(), std::ios::binary);
           dest<<src.rdbuf();
+          std::cout << "files containing 'DNA' include: " << newFile << "\n";
           break;//this will get you out of the while loop going line by line
-        }
-        if(line.find("ATOM") != std::string::npos || line.find("HETATM") != std::string::npos){
-          break;
-          //this would mean that you are at coordinate information and if you make it here you havent found the keyword
         }
       }
     }
@@ -72,7 +65,7 @@ int main(int argc, char *argv[]) {
     //NOTE SOOOOO how would you do this for a list of keywords????
     //you would have another for loop inside of your while loop to check each line for each keyword
 
-    //TODO make sure that you can create a directory within another directory and put files in there in the new newDirectory
+    //TODO make strings that you are searching for and with all lowercase in DRISE in
     //TODO allow for multiple keywords
     //TODO parameterize ^^^
     //TODO MAYBE make this program find keywords that you find on specific lines

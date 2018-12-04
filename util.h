@@ -1,3 +1,5 @@
+#include "common_includes.h"
+
 void replaceAll(std::string& source, const std::string& from, const std::string& to);
 
 //copyFile is unused now

@@ -81,6 +81,12 @@
 		<Unit filename="/Users/jacknadaud/Desktop/development/Dataset_Gathering_PDB/main.cpp">
 			<Option target="Dataset_Gathering_PDB"/>
 		</Unit>
+		<Unit filename="/Users/jacknadaud/Desktop/development/Dataset_Gathering_PDB/util.cpp">
+			<Option target="Dataset_Gathering_PDB"/>
+		</Unit>
+		<Unit filename="/Users/jacknadaud/Desktop/development/Dataset_Gathering_PDB/util.h">
+			<Option target="Dataset_Gathering_PDB"/>
+		</Unit>
 		<Unit filename="/Users/jacknadaud/Desktop/development/Dataset_Gathering_PDB/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

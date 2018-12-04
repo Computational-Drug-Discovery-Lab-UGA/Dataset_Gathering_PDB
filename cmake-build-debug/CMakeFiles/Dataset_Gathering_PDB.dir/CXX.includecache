@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/Users/jacknadaud/Desktop/development/Dataset_Gathering_PDB/main.cpp
+/Users/jacknadaud/Desktop/development/Dataset_Gathering_PDB/common_includes.h
 dirent.h
 -
 fstream
@@ -33,4 +33,16 @@ algorithm
 -
 iterator
 -
+sys/types.h
+-
+
+/Users/jacknadaud/Desktop/development/Dataset_Gathering_PDB/main.cpp
+common_includes.h
+/Users/jacknadaud/Desktop/development/Dataset_Gathering_PDB/common_includes.h
+util.h
+/Users/jacknadaud/Desktop/development/Dataset_Gathering_PDB/util.h
+
+/Users/jacknadaud/Desktop/development/Dataset_Gathering_PDB/util.h
+common_includes.h
+/Users/jacknadaud/Desktop/development/Dataset_Gathering_PDB/common_includes.h
 
